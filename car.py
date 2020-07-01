@@ -32,7 +32,7 @@ class Car:
 
     def turn(self, drection):
         self.direction = drection
-        if self.move:
+        if self.move is True:
             return f"машина движется {self.direction}"
         else:
             print(f"машина пока не имеет направления движения")
@@ -54,8 +54,10 @@ class Car:
 
 class TownCar(Car):
     def show_speed(self):
-        if self.move is True and self.speed > 40:
+        if self.move is True and self.speed > 60:
             return "превышена"
+        elif self.move is True and self.speed < 60:
+            return self.speed
         else:
             return "отсутствует"
 
@@ -64,6 +66,8 @@ class WorkCar(Car):
     def show_speed(self):
         if self.move is True and self.speed > 40:
             return "превышена"
+        elif self.move is True and self.speed < 40:
+            return self.speed
         else:
             return "отсутствует"
 
