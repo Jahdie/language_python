@@ -30,11 +30,10 @@ class Cells:
         return Cells(self.num_cells + other.num_cells)
 
     def __sub__(self, other):
-        result = self.num_cells - other.num_cells
-        if result < 0:
+        if (self.num_cells - other.num_cells) < 0:
             print("Меньше нуля!!!")
         else:
-            return result
+            return Cells(self.num_cells - other.num_cells)
 
     def __mul__(self, other):
         return Cells(round(self.num_cells * other.num_cells))
