@@ -40,7 +40,7 @@ class Cells:
         return Cells(round(self.num_cells * other.num_cells))
 
     def __truediv__(self, other):
-        return Cells(round(self.num_cells / other.num_cells))
+        return Cells(self.num_cells // other.num_cells)
 
     def __str__(self):
         return f"{self.num_cells}"
